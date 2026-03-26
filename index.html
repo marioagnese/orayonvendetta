@@ -3,90 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VendettaGlobal • AI Arbitrage Business</title>
+  <title>Vendetta • AI Arbitrage</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%); }
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .logo-glow { filter: drop-shadow(0 0 30px #ef4444); }
   </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-black text-white">
+
   <!-- Navbar -->
-  <nav class="border-b border-zinc-800 bg-zinc-900">
+  <nav class="fixed top-0 w-full border-b border-red-900/50 bg-black/90 backdrop-blur-md z-50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <i class="fa-solid fa-robot text-3xl text-emerald-400"></i>
-        <span class="text-2xl font-bold">VendettaGlobal</span>
+        <img src="logo.png" alt="Vendetta" class="h-12 logo-glow">
+        <span class="text-3xl font-black tracking-tighter text-red-500">VENDETTA</span>
       </div>
       <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#how" class="hover:text-emerald-400">How It Works</a>
-        <a href="#results" class="hover:text-emerald-400">Results</a>
-        <a href="#get-started" class="hover:text-emerald-400">Get Started</a>
+        <a href="#how" class="hover:text-red-400">How It Works</a>
+        <a href="#get-started" class="hover:text-red-400">Get Started</a>
       </div>
-      <div class="text-xs text-zinc-500">Vendetta Global LLC • Texas, USA</div>
+      <div class="text-xs text-zinc-500">Texas, USA</div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="hero-bg py-24">
+  <section class="hero-bg min-h-screen flex items-center pt-20">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-        Build a <span class="text-emerald-400">$5K–$15K/mo</span><br>AI Arbitrage Business
+      <img src="logo.png" alt="Vendetta Logo" class="mx-auto h-40 logo-glow mb-8">
+      
+      <h1 class="text-6xl md:text-7xl font-black leading-none mb-6 tracking-tighter">
+        BUILD A <span class="text-red-500">$5K–$15K</span><br>
+        AI ARBITRAGE BUSINESS
       </h1>
-      <p class="text-xl text-zinc-400 max-w-2xl mx-auto mb-10">
+      
+      <p class="text-2xl text-zinc-300 max-w-2xl mx-auto mb-12">
         No coding. No inventory. No customer service.<br>
-        Use ready-made AI tools to help small businesses automate — and keep 70-80% margins.
+        Use ready-made AI tools to automate small businesses and keep the profit.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://app.orayon.ai/register/vendettaglobal?plan_id=2" 
-           class="bg-emerald-400 hover:bg-emerald-500 text-black font-semibold px-10 py-5 rounded-2xl text-xl inline-flex items-center justify-center gap-3">
-          Get the Private System Now
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-      <p class="text-xs text-zinc-500 mt-8">Instant access • 14-day money-back guarantee • Backed by Vendetta Global LLC, Texas</p>
-    </div>
-  </section>
 
-  <!-- How it works -->
-  <section id="how" class="py-20 bg-zinc-900">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16">How VendettaGlobal AI Arbitrage Works</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="bg-zinc-800 p-8 rounded-3xl">
-          <div class="text-emerald-400 text-5xl mb-6">01</div>
-          <h3 class="text-2xl font-semibold mb-4">Find Businesses That Need AI</h3>
-          <p class="text-zinc-400">Target restaurants, clinics, real estate agents, e-commerce stores — anyone wasting time on manual work.</p>
-        </div>
-        <div class="bg-zinc-800 p-8 rounded-3xl">
-          <div class="text-emerald-400 text-5xl mb-6">02</div>
-          <h3 class="text-2xl font-semibold mb-4">Install Ready-Made AI Tools</h3>
-          <p class="text-zinc-400">Copy-paste proven automations (chatbots, lead systems, content engines). Takes under 2 hours per client.</p>
-        </div>
-        <div class="bg-zinc-800 p-8 rounded-3xl">
-          <div class="text-emerald-400 text-5xl mb-6">03</div>
-          <h3 class="text-2xl font-semibold mb-4">Collect Recurring Revenue</h3>
-          <p class="text-zinc-400">$2K–$5K setup + $500–$1K/month per client. AI runs 90% on autopilot.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Bar -->
-  <section class="bg-emerald-400 text-black py-8">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <a href="https://app.orayon.ai/register/vendettaglobal?plan_id=2" class="inline-flex items-center gap-3 text-2xl font-bold">
-        Start Your First $5K Month →
+      <a href="https://app.orayon.ai/register/vendettaglobal?plan_id=2" 
+         class="inline-flex items-center gap-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-2xl px-16 py-7 rounded-2xl transition-all hover:scale-105">
+        Get the Private System Now
+        <span class="text-3xl">→</span>
       </a>
+
+      <p class="mt-10 text-sm text-zinc-400">
+        Instant access • 14-day money-back guarantee • Vendetta, Texas
+      </p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-zinc-950 py-12 text-xs text-zinc-500 border-t border-zinc-800">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      Vendetta Global LLC • Texas, USA • All rights reserved 2026
+  <!-- How It Works -->
+  <section id="how" class="py-24 bg-zinc-950">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16 text-red-400">How Vendetta Works</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-zinc-900 p-10 rounded-3xl border border-red-900/30 hover:border-red-500 transition">
+          <div class="text-red-500 text-5xl font-black mb-6">01</div>
+          <h3 class="text-2xl font-semibold mb-4">Find Hungry Businesses</h3>
+          <p class="text-zinc-400">Target small businesses wasting time on manual tasks — restaurants, clinics, real estate, e-commerce.</p>
+        </div>
+        <div class="bg-zinc-900 p-10 rounded-3xl border border-red-900/30 hover:border-red-500 transition">
+          <div class="text-red-500 text-5xl font-black mb-6">02</div>
+          <h3 class="text-2xl font-semibold mb-4">Install Ready AI Systems</h3>
+          <p class="text-zinc-400">Copy-paste proven automations for leads, support, content & operations. Done in under 2 hours.</p>
+        </div>
+        <div class="bg-zinc-900 p-10 rounded-3xl border border-red-900/30 hover:border-red-500 transition">
+          <div class="text-red-500 text-5xl font-black mb-6">03</div>
+          <h3 class="text-2xl font-semibold mb-4">Collect Recurring Cash</h3>
+          <p class="text-zinc-400">$2K–$5K setup + $500–$1K monthly per client. AI runs 90% on autopilot.</p>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-red-600 py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-black mb-6">Ready to Build Your Vendetta?</h2>
+      <a href="https://app.orayon.ai/register/vendettaglobal?plan_id=2" 
+         class="inline-block bg-white text-black font-bold text-2xl px-20 py-8 rounded-2xl hover:bg-zinc-200 transition">
+        Get Started Now →
+      </a>
+      <p class="mt-8 text-sm opacity-80">Anytime. Anywhere.</p>
+    </div>
+  </section>
+
+  <footer class="bg-black py-12 text-center text-xs text-zinc-500">
+    Vendetta • AI Arbitrage • Texas, USA • 2026<br>
+    <span class="text-[10px]">Powered by proven AI tools</span>
   </footer>
 </body>
 </html>
