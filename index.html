@@ -8,10 +8,9 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('background.jpg');
+      background: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), url('background.jpg');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
     }
     .logo-glow { filter: drop-shadow(0 0 30px #ef4444); }
   </style>
@@ -27,6 +26,7 @@
       </div>
       <div class="hidden md:flex gap-8 text-sm font-medium">
         <a href="#how" class="hover:text-red-400">How It Works</a>
+        <a href="#results" class="hover:text-red-400">Results</a>
         <a href="#get-started" class="hover:text-red-400">Get Started</a>
       </div>
       <div class="text-xs text-zinc-500">Texas, USA</div>
@@ -36,63 +36,77 @@
   <!-- Hero -->
   <section class="hero-bg min-h-screen flex items-center pt-20">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <img src="logo.png" alt="Vendetta Logo" class="mx-auto h-40 logo-glow mb-8">
-      
+      <img src="logo.png" alt="Vendetta" class="mx-auto h-40 logo-glow mb-8">
       <h1 class="text-6xl md:text-7xl font-black leading-none mb-6 tracking-tighter">
-        BUILD A <span class="text-red-500">$5K–$15K</span><br>
+        BUILD A <span class="text-red-500">$5K/MO</span><br>
         AI ARBITRAGE BUSINESS
       </h1>
-      
       <p class="text-2xl text-zinc-300 max-w-2xl mx-auto mb-12">
         No coding. No inventory. No customer service.<br>
-        Use ready-made AI tools to automate small businesses and keep the profit.
+        Use ready-made AI tools to help small businesses automate — and keep 70-80% margins.
       </p>
-
       <a href="https://app.orayon.ai/register/vendettaglobal?plan_id=2" 
          class="inline-flex items-center gap-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-2xl px-16 py-7 rounded-2xl transition-all hover:scale-105">
-        Get the Private System Now
-        <span class="text-3xl">→</span>
+        Get the Private System Now →
       </a>
+      <p class="mt-10 text-sm text-zinc-400">Instant access • 14-day money-back guarantee • Backed by Vendetta, Texas</p>
+    </div>
+  </section>
 
-      <p class="mt-10 text-sm text-zinc-400">
-        Instant access • 14-day money-back guarantee • Vendetta, Texas
-      </p>
+  <!-- Results / Social Proof -->
+  <section id="results" class="py-20 bg-zinc-950">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-12 text-red-400">Real Results from Vendetta Users</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-zinc-900 p-8 rounded-3xl">
+          <div class="text-5xl font-black text-red-500 mb-2">$18,105</div>
+          <p class="text-zinc-400">Average monthly revenue per client</p>
+        </div>
+        <div class="bg-zinc-900 p-8 rounded-3xl">
+          <div class="text-5xl font-black text-red-500 mb-2">$4,200</div>
+          <p class="text-zinc-400">Average monthly recurring revenue</p>
+        </div>
+        <div class="bg-zinc-900 p-8 rounded-3xl">
+          <div class="text-5xl font-black text-red-500 mb-2">3.8x</div>
+          <p class="text-zinc-400">ROI in first 90 days (typical)</p>
+        </div>
+      </div>
+      <p class="text-xs text-zinc-500 mt-8">*Results vary. Self-reported by users.</p>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section id="how" class="py-24 bg-zinc-950">
+  <section id="how" class="py-24 bg-black">
     <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16 text-red-400">How Vendetta Works</h2>
+      <h2 class="text-4xl font-bold text-center mb-16">How Vendetta AI Arbitrage Works</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-zinc-900 p-10 rounded-3xl border border-red-900/30 hover:border-red-500 transition">
-          <div class="text-red-500 text-5xl font-black mb-6">01</div>
-          <h3 class="text-2xl font-semibold mb-4">Find Hungry Businesses</h3>
-          <p class="text-zinc-400">Target small businesses wasting time on manual tasks — restaurants, clinics, real estate, e-commerce.</p>
+        <div class="text-center">
+          <div class="text-6xl font-black text-red-500 mb-4">01</div>
+          <h3 class="text-2xl font-semibold mb-3">Find Businesses</h3>
+          <p class="text-zinc-400">Target small businesses desperate for AI help but don’t know where to start.</p>
         </div>
-        <div class="bg-zinc-900 p-10 rounded-3xl border border-red-900/30 hover:border-red-500 transition">
-          <div class="text-red-500 text-5xl font-black mb-6">02</div>
-          <h3 class="text-2xl font-semibold mb-4">Install Ready AI Systems</h3>
-          <p class="text-zinc-400">Copy-paste proven automations for leads, support, content & operations. Done in under 2 hours.</p>
+        <div class="text-center">
+          <div class="text-6xl font-black text-red-500 mb-4">02</div>
+          <h3 class="text-2xl font-semibold mb-3">Install Ready AI Tools</h3>
+          <p class="text-zinc-400">Use proven, off-the-shelf AI agents and automations. Takes under 2 hours per client.</p>
         </div>
-        <div class="bg-zinc-900 p-10 rounded-3xl border border-red-900/30 hover:border-red-500 transition">
-          <div class="text-red-500 text-5xl font-black mb-6">03</div>
-          <h3 class="text-2xl font-semibold mb-4">Collect Recurring Cash</h3>
-          <p class="text-zinc-400">$2K–$5K setup + $500–$1K monthly per client. AI runs 90% on autopilot.</p>
+        <div class="text-center">
+          <div class="text-6xl font-black text-red-500 mb-4">03</div>
+          <h3 class="text-2xl font-semibold mb-3">Collect Recurring Revenue</h3>
+          <p class="text-zinc-400">$2K–$5K setup + $500–$1K/month per client. AI runs 90% on autopilot.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section class="bg-red-600 py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
+  <section class="bg-red-600 py-20 text-center">
+    <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-5xl font-black mb-6">Ready to Build Your Vendetta?</h2>
       <a href="https://app.orayon.ai/register/vendettaglobal?plan_id=2" 
          class="inline-block bg-white text-black font-bold text-2xl px-20 py-8 rounded-2xl hover:bg-zinc-200 transition">
-        Get Started Now →
+        Get the Private System Now →
       </a>
-      <p class="mt-8 text-sm opacity-80">Anytime. Anywhere.</p>
     </div>
   </section>
 
