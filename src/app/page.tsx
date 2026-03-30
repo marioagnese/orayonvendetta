@@ -13,10 +13,10 @@ export default function OrayonLeadFunnelLandingPage() {
           </div>
 
           <a
-            href="#buy"
+            href="/checkout"
             className="text-sm border border-amber-300/30 px-4 py-2 rounded-lg hover:bg-amber-300/10 transition"
           >
-            Get the ebook
+            Checkout
           </a>
         </div>
 
@@ -38,18 +38,10 @@ export default function OrayonLeadFunnelLandingPage() {
 
             <div className="flex gap-4">
               <a
-                href="#buy"
-                className="bg-amber-300 text-black font-semibold px-6 py-3 rounded-xl hover:bg-amber-200 transition"
-              >
-                Get the ebook — $4.99
-              </a>
-
-              <a
                 href="#ebook"
                 className="border border-white/20 px-6 py-3 rounded-xl hover:bg-white/10 transition"
               >
-                Learn more
-              </a>
+                Preview the ebPreview the ebook>
             </div>
           </div>
 
@@ -75,10 +67,10 @@ export default function OrayonLeadFunnelLandingPage() {
 
             <a
               id="buy"
-              href="https://buy.stripe.com/28E4gy0HR3lU3z936193y00"
+              href="/checkout"
               className="block text-center bg-amber-300 text-black font-semibold py-3 rounded-xl hover:bg-amber-200 transition"
             >
-              Buy the ebook
+              Continue to checkout
             </a>
 
           </div>
