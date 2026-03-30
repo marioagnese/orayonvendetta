@@ -75,7 +75,7 @@ export default function OrayonLeadFunnelLandingPage() {
 
             <a
               id="buy"
-              href="https://buy.stripe.com/"
+              href="https://buy.stripe.com/28E4gy0HR3lU3z936193y00"
               className="block text-center bg-amber-300 text-black font-semibold py-3 rounded-xl hover:bg-amber-200 transition"
             >
               Buy the ebook
