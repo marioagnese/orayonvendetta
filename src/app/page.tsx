@@ -17,7 +17,7 @@ export default function Page() {
           <div className="flex items-center gap-4">
             <img
               src="/logo.png"
-              alt="Vendetta Center"
+              alt="Vendetta"
               className="h-14 w-auto"
             />
             <span className="text-sm tracking-widest text-amber-200">
