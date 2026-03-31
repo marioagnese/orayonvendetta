@@ -11,24 +11,19 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="mb-12 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+
+        {/* TOP BAR (cleaned) */}
+        <div className="mb-16 flex items-center">
+          <div className="flex items-center gap-4">
             <img
               src="/logo.png"
               alt="Vendetta Center"
-              className="h-10 w-auto"
+              className="h-14 w-auto"
             />
             <span className="text-sm tracking-widest text-amber-200">
-              VENDETTA CENTER
+              VENDETTA
             </span>
           </div>
-
-          <a
-            href="/checkout"
-            className="rounded-lg border border-amber-300/30 px-4 py-2 text-sm transition hover:bg-amber-300/10"
-          >
-            Checkout
-          </a>
         </div>
 
         <div className="grid items-center gap-16 lg:grid-cols-2">
