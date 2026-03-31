@@ -12,13 +12,14 @@ export default function CheckoutPage() {
     setError("");
 
     const form = new FormData(e.currentTarget);
+
     const payload = {
-      fullName: String(form.get("fullName") || "").trim(),
-      email: String(form.get("email") || "").trim(),
-      phone: String(form.get("phone") || "").trim(),
-      country: String(form.get("country") || "").trim(),
-      stateRegion: String(form.get("stateRegion") || "").trim(),
-      role: String(form.get("role") || "").trim(),
+      fullName: String(form.get("fullName") || ""),
+      email: String(form.get("email") || ""),
+      phone: String(form.get("phone") || ""),
+      country: String(form.get("country") || ""),
+      stateRegion: String(form.get("stateRegion") || ""),
+      role: String(form.get("role") || ""),
       consentEmail: form.get("consentEmail") === "on",
       consentSms: form.get("consentSms") === "on",
     };
@@ -26,126 +27,57 @@ export default function CheckoutPage() {
     try {
       const res = await fetch("/api/create-checkout-session", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       const data = await res.json();
 
-      if (!res.ok || !data.url) {
-        throw new Error(data.error || "Unable to create checkout session.");
-      }
+      if (!data.url) throw new Error("Stripe error");
 
       window.location.href = data.url;
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+    } catch (err: any) {
+      setError(err.message);
       setLoading(false);
     }
   }
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <div className="mb-10 flex items-center gap-3">
-          <img src="/logo.png" alt="Vendetta Center" className="h-10" />
-          <div>
-            <div className="text-sm tracking-widest text-amber-200">VENDETTA CENTER</div>
-            <div className="text-xs text-zinc-400">Checkout</div>
-          </div>
+      <section className="mx-auto max-w-5xl px-6 py-20">
+
+        {/* LOGO */}
+        <div className="mb-14">
+          <img src="/logo.png" alt="Vendetta" className="h-40 w-auto" />
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <h1 className="text-4xl font-black leading-tight">Complete your order</h1>
-            <p className="mt-5 text-lg leading-8 text-zinc-300">
-              Enter your details below to continue to secure payment for <span className="font-semibold text-white">The Human Opportunity</span>.
-            </p>
+        <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
+          <form onSubmit={handleSubmit} className="space-y-4">
 
-            <form onSubmit={handleSubmit} className="mt-10 space-y-5 rounded-2xl border border-white/10 bg-zinc-900 p-6">
-              <div>
-                <label className="mb-2 block text-sm font-medium">Full name</label>
-                <input name="fullName" required className="w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 outline-none focus:border-amber-300" />
-              </div>
+            <h1 className="text-4xl font-black">Complete your order</h1>
 
-              <div>
-                <label className="mb-2 block text-sm font-medium">Email</label>
-                <input name="email" type="email" required className="w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 outline-none focus:border-amber-300" />
-              </div>
+            <input name="fullName" placeholder="Full name" required className="w-full p-3 bg-zinc-900 rounded" />
+            <input name="email" placeholder="Email" required className="w-full p-3 bg-zinc-900 rounded" />
+            <input name="phone" placeholder="Phone" required className="w-full p-3 bg-zinc-900 rounded" />
+            <input name="country" placeholder="Country" required className="w-full p-3 bg-zinc-900 rounded" />
+            <input name="stateRegion" placeholder="State / Region" required className="w-full p-3 bg-zinc-900 rounded" />
 
-              <div>
-                <label className="mb-2 block text-sm font-medium">Phone</label>
-                <input name="phone" required className="w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 outline-none focus:border-amber-300" />
-              </div>
+            <select name="role" className="w-full p-3 bg-zinc-900 rounded">
+              <option>Professional</option>
+              <option>Business owner</option>
+              <option>Student</option>
+            </select>
 
-              <div className="grid gap-5 md:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-sm font-medium">Country</label>
-                  <input name="country" required className="w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 outline-none focus:border-amber-300" />
-                </div>
-                <div>
-                  <label className="mb-2 block text-sm font-medium">State / Region</label>
-                  <input name="stateRegion" required className="w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 outline-none focus:border-amber-300" />
-                </div>
-              </div>
+            <button className="w-full bg-amber-300 text-black py-4 rounded font-semibold">
+              {loading ? "Redirecting..." : "Continue to payment"}
+            </button>
 
-              <div>
-                <label className="mb-2 block text-sm font-medium">What best describes you?</label>
-                <select name="role" className="w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 outline-none focus:border-amber-300">
-                  <option>Professional</option>
-                  <option>Business owner</option>
-                  <option>Freelancer</option>
-                  <option>Student</option>
-                  <option>Exploring AI opportunity</option>
-                </select>
-              </div>
+            {error && <p className="text-red-400">{error}</p>}
+          </form>
 
-              <div className="space-y-3 rounded-xl border border-white/10 bg-zinc-950 p-4 text-sm text-zinc-300">
-                <label className="flex items-start gap-3">
-                  <input name="consentEmail" type="checkbox" className="mt-1" required />
-                  <span>I agree to receive email updates, delivery details, and follow-up information related to this purchase.</span>
-                </label>
-                <label className="flex items-start gap-3">
-                  <input name="consentSms" type="checkbox" className="mt-1" />
-                  <span>I agree to receive optional text messages or phone follow-up about related opportunities.</span>
-                </label>
-              </div>
-
-              {error ? <p className="text-sm text-red-400">{error}</p> : null}
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full rounded-xl bg-amber-300 px-6 py-4 font-semibold text-black transition hover:bg-amber-200 disabled:opacity-70"
-              >
-                {loading ? "Redirecting..." : "Continue to secure payment"}
-              </button>
-            </form>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6 h-fit">
-            <h2 className="text-2xl font-bold">Order summary</h2>
-            <p className="mt-3 text-zinc-400">The Human Opportunity</p>
-            <p className="mt-1 text-sm text-zinc-500">Premium ebook on AI, leverage, and business transformation.</p>
-
-            <div className="my-6 h-px bg-white/10" />
-
-            <ul className="space-y-3 text-sm text-zinc-300">
-              <li>• Instant access after payment</li>
-              <li>• Thank-you delivery page</li>
-              <li>• Follow-up email sequence</li>
-              <li>• Early access to deeper opportunities</li>
-            </ul>
-
-            <div className="my-6 h-px bg-white/10" />
-
-            <div className="flex items-center justify-between text-lg">
-              <span>Total</span>
-              <span className="font-bold text-amber-200">$4.99</span>
-            </div>
-
-            <p className="mt-6 text-xs leading-6 text-zinc-500">
-              Educational material only. No earnings claims or guarantees. Your details are collected for order fulfillment and, where consented, future follow-up.
-            </p>
+          <div className="bg-zinc-900 p-6 rounded-2xl">
+            <h2 className="text-xl font-bold">Order summary</h2>
+            <p className="mt-2 text-zinc-400">The Human Opportunity</p>
+            <p className="mt-4 text-2xl">$4.99</p>
           </div>
         </div>
       </section>

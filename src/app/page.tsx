@@ -12,18 +12,9 @@ export default function Page() {
     <main className="min-h-screen bg-zinc-950 text-white">
       <section className="mx-auto max-w-6xl px-6 py-20">
 
-        {/* TOP BAR (cleaned) */}
-        <div className="mb-16 flex items-center">
-          <div className="flex items-center gap-4">
-            <img
-              src="/logo.png"
-              alt="Vendetta"
-              className="h-14 w-auto"
-            />
-            <span className="text-sm tracking-widest text-amber-200">
-              VENDETTA
-            </span>
-          </div>
+        {/* LOGO */}
+        <div className="mb-12">
+          <img src="/logo.png" alt="Vendetta" className="h-48 w-auto" />
         </div>
 
         <div className="grid items-center gap-16 lg:grid-cols-2">
@@ -43,14 +34,12 @@ export default function Page() {
               who wins.
             </p>
 
-            <div className="flex gap-4">
-              <a
-                href="#ebook"
-                className="rounded-xl border border-white/20 px-6 py-3 transition hover:bg-white/10"
-              >
-                Preview the ebook
-              </a>
-            </div>
+            <a
+              href="#ebook"
+              className="rounded-xl border border-white/20 px-6 py-3 transition hover:bg-white/10"
+            >
+              Preview the ebook
+            </a>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8">
@@ -72,7 +61,7 @@ export default function Page() {
 
             <a
               href="/checkout"
-              className="block rounded-xl bg-amber-300 py-3 text-center font-semibold text-black transition hover:bg-amber-200"
+              className="block rounded-xl bg-amber-300 py-3 text-center font-semibold text-black hover:bg-amber-200 transition"
             >
               Continue to checkout
             </a>
@@ -117,13 +106,12 @@ export default function Page() {
         </h2>
 
         <p className="mb-8 text-zinc-400">
-          This is not about tools. It is about seeing what most people still do
-          not.
+          This is not about tools. It is about seeing what most people still do not.
         </p>
 
         <a
           href="/checkout"
-          className="rounded-xl bg-amber-300 px-8 py-4 font-semibold text-black transition hover:bg-amber-200"
+          className="rounded-xl bg-amber-300 px-8 py-4 font-semibold text-black hover:bg-amber-200 transition"
         >
           Get the ebook — $4.99
         </a>
